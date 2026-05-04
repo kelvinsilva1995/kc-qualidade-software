@@ -192,15 +192,12 @@ section { padding: 80px 0; overflow: hidden; }
 .portfolio .portfolio-wrap img { width: 100%; display: block; transition: transform 0.5s ease, opacity 0.3s ease; border-radius: var(--radius); }
 .portfolio-placeholder { width: 100%; min-height: 180px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--dark-700), var(--dark-600)); }
 .portfolio-placeholder i { font-size: 56px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; opacity: 0.6; transition: var(--transition); }
-.portfolio .portfolio-wrap::before { content: ""; background: linear-gradient(to top, rgba(8,13,26,0.95) 0%, rgba(8,13,26,0.3) 50%, transparent 100%); position: absolute; inset: 0; transition: var(--transition); z-index: 2; opacity: 0; border-radius: var(--radius); }
-.portfolio .portfolio-wrap .portfolio-title { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 14px 14px; z-index: 4; transform: translateY(8px); opacity: 0; transition: var(--transition); color: #fff; font-size: 13px; font-weight: 600; font-family: "Poppins", sans-serif; }
-.portfolio .portfolio-wrap .portfolio-links { opacity: 0; right: 10px; top: 10px; z-index: 3; position: absolute; transition: var(--transition); display: flex; gap: 6px; }
+.portfolio .portfolio-wrap::before { content: ""; background: linear-gradient(to top, rgba(8,13,26,0.92) 0%, rgba(8,13,26,0.15) 60%, transparent 100%); position: absolute; inset: 0; border-radius: var(--radius); z-index: 2; }
+.portfolio .portfolio-wrap .portfolio-title { position: absolute; bottom: 0; left: 0; right: 0; padding: 14px 14px 12px; z-index: 4; color: #fff; font-size: 13px; font-weight: 600; font-family: "Poppins", sans-serif; }
+.portfolio .portfolio-wrap .portfolio-links { right: 10px; top: 10px; z-index: 3; position: absolute; display: flex; gap: 6px; opacity: 0; transition: var(--transition); }
 .portfolio .portfolio-wrap .portfolio-links a { color: #fff; font-size: 17px; display: flex; align-items: center; justify-content: center; background: rgba(var(--primary-rgb), 0.9); width: 36px; height: 36px; border-radius: var(--radius-full); transition: var(--transition); }
 .portfolio .portfolio-wrap .portfolio-links a:hover { background: var(--primary); transform: scale(1.1); }
-.portfolio .portfolio-wrap:hover::before { opacity: 1; }
 .portfolio .portfolio-wrap:hover .portfolio-links { opacity: 1; }
-.portfolio .portfolio-wrap:hover .portfolio-title { opacity: 1; transform: translateY(0); }
-.portfolio .portfolio-wrap:hover img { transform: scale(1.06); opacity: 0.7; }
 .portfolio .portfolio-wrap:hover .portfolio-placeholder i { opacity: 1; }
 
 .contact { padding-bottom: 100px; }

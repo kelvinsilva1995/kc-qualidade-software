@@ -120,34 +120,28 @@
     });
   }
 
-  // Portfolio isotope filter
-  window.addEventListener("load", () => {
-    let portfolioContainer = select(".portfolio-container");
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: ".portfolio-item",
+  // Portfolio filter
+  const portfolioFilters = select("#portfolio-flters li", true);
+  const portfolioItems = select(".portfolio-item", true);
+
+  on(
+    "click",
+    "#portfolio-flters li",
+    function (e) {
+      e.preventDefault();
+      portfolioFilters.forEach((el) => el.classList.remove("filter-active"));
+      this.classList.add("filter-active");
+      const filter = this.getAttribute("data-filter");
+      portfolioItems.forEach((item) => {
+        if (filter === "*" || item.classList.contains(filter.substring(1))) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
       });
-
-      let portfolioFilters = select("#portfolio-flters li", true);
-
-      on(
-        "click",
-        "#portfolio-flters li",
-        function (e) {
-          e.preventDefault();
-          portfolioFilters.forEach(function (el) {
-            el.classList.remove("filter-active");
-          });
-          this.classList.add("filter-active");
-          portfolioIsotope.arrange({ filter: this.getAttribute("data-filter") });
-          portfolioIsotope.on("arrangeComplete", function () {
-            AOS.refresh();
-          });
-        },
-        true
-      );
-    }
-  });
+    },
+    true
+  );
 
   // GLightbox
   const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
