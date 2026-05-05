@@ -143,17 +143,6 @@
     true
   );
 
-  // GLightbox
-  const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
-
-  // Swiper for portfolio details
-  new Swiper(".portfolio-details-slider", {
-    speed: 400,
-    loop: true,
-    autoplay: { delay: 5000, disableOnInteraction: false },
-    pagination: { el: ".swiper-pagination", type: "bullets", clickable: true },
-  });
-
   // AOS init
   window.addEventListener("load", () => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true, mirror: false });
